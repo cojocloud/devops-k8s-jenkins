@@ -7,3 +7,6 @@ pipeline {
                 git "https://github.com/cojocloud/devops-k8s-jenkins.git"
             }
         }
+    }
+
+}

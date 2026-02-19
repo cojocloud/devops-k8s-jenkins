@@ -12,8 +12,8 @@ echo "========================================"
 # ------------------------------------------------------------
 # 0. Configuration – change these to match your environment
 # ------------------------------------------------------------
-export TF_VAR_dockerhub_username="${DOCKER_USERNAME:-joebaho2}"
-export TF_VAR_region="${AWS_REGION:-us-west-2}"
+export TF_VAR_dockerhub_username="${DOCKER_USERNAME:-thiexco}"
+export TF_VAR_region="${AWS_REGION:-us-east-1}"
 export TF_VAR_cluster_name="${CLUSTER_NAME:-automated-demo-cluster}"
 export TF_VAR_environment="${ENVIRONMENT:-dev}"
 

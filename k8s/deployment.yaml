@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: your-dockerhub-username/myapp:latest   # replaced by sed in script
+        image: thiexco/devops-k8s-jenkins:latest  # replaced by sed in script
         ports:
         - containerPort: 80
         resources:

@@ -1,10 +1,10 @@
 FROM python:3.9-slim
 
-WORKDIR /code
+WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir --upgrade -r requirements.txt
+COPY app/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY main.py form.html ./
+COPY app/main.py app/form.html ./
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80", "--loop", "asyncio"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]

@@ -3,12 +3,18 @@ FROM python:3.9-slim
 # Set working directory
 WORKDIR /app
 
-# Copy requirements and install in one layer
-COPY app/requirements.txt .
+# Copy requirements and install dependencies
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy all application code and templates in one layer
-COPY app/main.py app/templates ./  
+# Copy application code
+COPY main.py .
+
+# Copy templates directory
+COPY templates ./templates
+
+# Expose port
+EXPOSE 80
 
 # Run the FastAPI app
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
